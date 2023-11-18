@@ -71,7 +71,8 @@ function CheckinBooking() {
 
   if (isLoading || settingsLoading) return <Spinner />;
 
-  if (!booking) return <Empty resourceName="booking" />;
+  Empty;
+  // if (!booking) return <Empty resourceName="booking" />;
   if (settingsError) return toast.error("Something went wrong");
   if (error) return toast.error("Something went wrong");
 

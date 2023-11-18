@@ -39,7 +39,6 @@ export async function getBooking(id) {
     .single();
 
   if (error) {
-    console.error(error);
     throw new Error("Booking not found");
   }
 
@@ -55,7 +54,6 @@ export async function getBookingsAfterDate(date) {
     .lte("created_at", getToday({ end: true }));
 
   if (error) {
-    console.error(error);
     throw new Error("Bookings could not get loaded");
   }
 
