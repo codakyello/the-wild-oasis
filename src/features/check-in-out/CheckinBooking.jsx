@@ -44,11 +44,11 @@ function CheckinBooking() {
 
   const [confirmPaid, setConfirmPaid] = useState(false);
 
-  const { booking, error, isLoading } = useBooking(id);
+  const { booking, isLoading } = useBooking(id);
 
   const {
     data: { breakfastPrice } = {},
-    error: settingsError,
+
     isLoading: settingsLoading,
   } = useSettings();
 
@@ -71,10 +71,7 @@ function CheckinBooking() {
 
   if (isLoading || settingsLoading) return <Spinner />;
 
-  Empty;
-  // if (!booking) return <Empty resourceName="booking" />;
-  if (settingsError) return toast.error("Something went wrong");
-  if (error) return toast.error("Something went wrong");
+  if (!booking) return <Empty resourceName="booking" />;
 
   function handleCheckin() {
     if (!confirmPaid) return;

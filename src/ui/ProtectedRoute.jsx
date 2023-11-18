@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import useUser from "../features/authentication/useUser";
 import { useNavigate } from "react-router-dom";
 import Spinner from "./Spinner";
-import { toast } from "react-hot-toast";
 import { styled } from "styled-components";
 import { useEffect } from "react";
 
@@ -23,7 +22,6 @@ function ProtectedRoute({ children }) {
   useEffect(
     function () {
       if (!isAuthenticated && !isLoading) navigate("/login");
-      if (error) navigate("/login");
     },
     [isLoading, error, isAuthenticated, navigate]
   );
@@ -34,7 +32,7 @@ function ProtectedRoute({ children }) {
         <Spinner />
       </FullPage>
     );
-  if (error) return toast.error("Something went wrong");
+  // if (error) return navigate("/login");
 
   if (isAuthenticated) return children;
 }

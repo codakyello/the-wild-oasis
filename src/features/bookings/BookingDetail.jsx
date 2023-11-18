@@ -32,7 +32,7 @@ const HeadingGroup = styled.div`
 
 function BookingDetail() {
   let { id } = useParams();
-  const { booking, isLoading, error } = useBooking(id);
+  const { booking, isLoading } = useBooking(id);
   const status = booking?.status;
   const navigate = useNavigate();
 
@@ -58,7 +58,6 @@ function BookingDetail() {
 
   if (isLoading) return <Spinner />;
   if (!booking) return <Empty resourceName="booking" />;
-  if (error) return toast.error("Something went wrong");
 
   return (
     <>
