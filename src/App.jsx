@@ -3,21 +3,17 @@ import GlobalStyles from "./styles/GlobalStyle";
 import Dashboard from "./pages/Admins/Dashboard";
 import Bookings from "./pages/Admins/Bookings";
 import Cabins from "./pages/Admins/Cabins";
+import CheckIn from "./pages/Admins/CheckIn";
 import Users from "./pages/Admins/Users";
 import Settings from "./pages/Admins/Settings";
 import Account from "./pages/Admins/Account";
 import Login from "./pages/Admins/Login";
 import PageNotFound from "./pages/PageNotFound";
 import AdminAppLayout from "./pages/Admins/AdminAppLayout";
-// import UserAppLayout from "./pages/Users/UserAppLayout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-// import { Toaster } from "react-hot-toast";
 import { Toaster } from "sonner";
-
-import CheckIn from "./pages/Admins/CheckIn";
 import ProtectedRoute from "./ui/ProtectedRoute";
-
 import { useDarkMode } from "./context/DarkModeContext";
 
 const queryClient = new QueryClient({
