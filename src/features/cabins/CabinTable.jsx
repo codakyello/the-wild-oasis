@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
 import useUrlParams from "../../hooks/useUrlParams";
+import Empty from "../../ui/Empty";
 
 function CabinTable() {
   const [cabinFilter] = useUrlParams("discount");
@@ -13,6 +14,7 @@ function CabinTable() {
   const { isLoading, error, cabins } = useCabins();
 
   if (isLoading) return <Spinner></Spinner>;
+  if (!cabins?.length) return <Empty resourceName="cabins" />;
   if (error) {
     return toast.error(error.message);
   }
