@@ -18,6 +18,7 @@ function DarkModeProvider({ children }) {
 
   useEffect(function () {
     if (isDarkMode) {
+      // Adding on the root html
       document.documentElement.classList.add("dark-mode");
       document.documentElement.classList.remove("light-mode");
     } else {

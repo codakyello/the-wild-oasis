@@ -2,11 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 :root {
-
-
   &, &.light-mode {
-
-
   --color-grey-0: #fff;
   --color-grey-50: #f9fafb;
   --color-grey-100: #f3f4f6;
@@ -43,14 +39,10 @@ const GlobalStyles = createGlobalStyle`
   --image-grayscale: 0;
   --image-opacity: 100%;
 }
-
-
-
   /* For dark mode */
 
-
-  &.dark-mode {
-    --color-grey-0: #18212f;
+ &.dark-mode {
+--color-grey-0: #18212f;
 --color-grey-50: #111827;
 --color-grey-100: #1f2937;
 --color-grey-200: #374151;
